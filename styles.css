@@ -1,4 +1,4 @@
-/* 🌟 Estilos Generales */
+/* 🎨 Estilos globales */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -6,82 +6,64 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
-/* 🌟 Contenedor Principal */
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .container {
-    width: 90%;
-    max-width: 420px;
-    background: rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 🌟 Estilos para el título */
-h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-/* 🌟 Estilos para el input y el botón */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    text-align: center;
-}
-
+/* 🟡 Botones */
 .btn {
     background: #ffcc00;
     color: #333;
-    padding: 12px;
+    padding: 10px 20px;
     font-size: 1.2rem;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    border: none;
 }
 
 .btn:hover {
     background: #ffdd44;
 }
 
-/* 🌟 Estilos para la cuadrícula */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* 🔥 Se adapta automáticamente */
-    gap: 10px;
-    margin: 20px auto;
-    justify-content: center;
-    max-width: 320px;
+/* ⏳ Temporizador */
+.timer {
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-/* 🌟 Cartas */
+/* 🎴 Tablero de juego */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+}
+
 .card {
-    width: 100%;
-    aspect-ratio: 1/1; /* 🔥 Hace que las cartas sean cuadradas */
+    width: 70px;
+    height: 70px;
     background: #fff;
-    color: transparent;
-    font-size: 1.8rem;
+    color: #000;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s;
 }
 
 .card.hidden {
@@ -89,20 +71,36 @@ input {
     color: transparent;
 }
 
-.card.revealed {
-    background: #ffcc00;
-    color: #000;
+.card:hover {
+    transform: scale(1.1);
 }
 
-/* 📱 Responsivo para móviles */
-@media (max-width: 480px) {
+/* 🏆 Ranking */
+.ranking-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.ranking-table th, .ranking-table td {
+    border: 1px solid #fff;
+    padding: 8px;
+    text-align: center;
+}
+
+.ranking-table th {
+    background: rgba(0, 0, 0, 0.3);
+}
+/* 📱 Estilos Responsivos */
+@media (max-width: 600px) {
     .grid {
-        max-width: 280px;
-        grid-template-columns: repeat(3, 1fr); /* 🔥 Se reduce en pantallas pequeñas */
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .card {
-        font-size: 1.4rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 
     .container {
@@ -115,6 +113,6 @@ input {
 
     .btn {
         font-size: 1rem;
-        padding: 10px;
+        padding: 8px 15px;
     }
 }
